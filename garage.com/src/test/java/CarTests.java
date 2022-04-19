@@ -12,7 +12,7 @@ public class CarTests {
 		LargeEngine engine = new LargeEngine();
 		ElectronicIgnition ignitionSystem = new ElectronicIgnition();
 
-		this.Car = new Car(model, engine, ignitionSystem);
+		this.Car = new ConvertibleCar(model, engine, ignitionSystem);
 	}
 
 	@Test
@@ -21,16 +21,15 @@ public class CarTests {
 
 		String actualModel = car.getModel();
 
-		assertEquals(actualModel, Car.getModel(), "car model is wrong");
+		assertEquals(actualModel, Car.getModel() , "");
 	}
 
 	@Test
 	public void canStartCar() {
 		Car car = this.Car;
 
-		car.start();
 		boolean isStarted = car.getIsStarted();
 
-		assertTrue(isStarted, "car is not started");
+		assertTrue(isStarted, "");
 	}
 }
