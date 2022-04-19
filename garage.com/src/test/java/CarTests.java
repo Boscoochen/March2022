@@ -4,32 +4,33 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CarTests {
-	private Car Car;
+ private Car Car;
 
-	@BeforeClass
-	public void setup() {
-		String model = "Corvette";
-		LargeEngine engine = new LargeEngine();
-		ElectronicIgnition ignitionSystem = new ElectronicIgnition();
+ @BeforeClass
+ public void setup() {
+  String model = "Corvette";
+  LargeEngine engine = new LargeEngine();
+  ElectronicIgnition ignitionSystem = new ElectronicIgnition();
 
-		this.Car = new ConvertibleCar(model, engine, ignitionSystem);
-	}
+  this.Car = new Car(model, engine, ignitionSystem);
+ }
 
-	@Test
-	public void canBuildCar() {
-		Car car = this.Car;
+ @Test
+ public void canBuildCar() {
+  Car car = this.Car;
 
-		String actualModel = car.getModel();
+  String actualModel = car.getModel();
 
-		assertEquals(actualModel, Car.getModel() , "");
-	}
+  assertEquals(actualModel, Car.getModel(), "car model is wrong");
+ }
 
-	@Test
-	public void canStartCar() {
-		Car car = this.Car;
+ @Test
+ public void canStartCar() {
+  Car car = this.Car;
 
-		boolean isStarted = car.getIsStarted();
+  car.start();
+  boolean isStarted = car.getIsStarted();
 
-		assertTrue(isStarted, "");
-	}
+  assertTrue(isStarted, "car is not started");
+ }
 }
