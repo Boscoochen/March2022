@@ -1,6 +1,5 @@
 public class ConvertibleCar extends Car implements ICar {
-	private boolean IsLowerTop;
-	private boolean IsRaiseTop;
+	private boolean IsLowerTop, IsRaiseTop;
 
 	public ConvertibleCar(String model, IEngine engine, IIgnition ignitionSystem) {
 		super(model, engine, ignitionSystem);

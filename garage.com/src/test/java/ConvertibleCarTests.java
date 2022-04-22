@@ -21,7 +21,7 @@ public class ConvertibleCarTests {
 
 	@Test
 	public void canBuildConvertibleCar() {
-		Car car = this.Car;
+		ConvertibleCar car = this.Car;
 
 		String actualModel = car.getModel();
 
