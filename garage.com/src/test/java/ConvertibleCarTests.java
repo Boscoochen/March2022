@@ -5,6 +5,8 @@ import static org.testng.Assert.fail;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import bsh.This;
+
 public class ConvertibleCarTests {
 	private ConvertibleCar Car;
 
@@ -23,25 +25,34 @@ public class ConvertibleCarTests {
 
 		String actualModel = car.getModel();
 
-		assertEquals(actualModel, Car.getModel() , "");
+		assertEquals(actualModel, Car.getModel(), "Wrong convertible car model");
 	}
 
 	@Test
 	public void canStartConvertibleCar() {
 		ConvertibleCar car = this.Car;
-		
+
+		car.start();
 		boolean isStarted = car.getIsStarted();
 
-		assertTrue(isStarted, "");
+		assertTrue(isStarted, "convertible car is not started");
 	}
 
 	@Test
 	public void canLowerTop() {
-		fail("not implemented yet");
+		ConvertibleCar car = this.Car;
+
+		car.lowerTop();
+		boolean isLowerTop = car.getIsLowerTop();
+		assertTrue(isLowerTop, "convertible car is not lowering top");
 	}
 
 	@Test
 	public void canRaiseTop() {
-		fail("not implemented yet");
+		ConvertibleCar car = this.Car;
+
+		car.raiseTop();
+		boolean isRaiseTop = car.getIsRaiseTop();
+		assertTrue(isRaiseTop, "convertible car is not raising top");
 	}
 }
